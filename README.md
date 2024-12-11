@@ -1,7 +1,7 @@
 <div align="center">
   <img alt="Redoc logo" src="https://raw.githubusercontent.com/Redocly/redoc/main//docs/images/redoc.png" width="400px" />
 
-# Generate beautiful API documentation from OpenAPI
+# Инструмент для создания красивой документации API из OpenAPI
 
   [![npm](http://img.shields.io/npm/v/redoc.svg)](https://www.npmjs.com/package/redoc) [![License](https://img.shields.io/npm/l/redoc.svg)](https://github.com/Redocly/redoc/blob/main/LICENSE)
 
@@ -9,91 +9,78 @@
 </div>
 
 
-## About Redoc
+## О Redoc
 
-Redoc is an open source tool for generating documentation from OpenAPI (formerly Swagger) definitions.
+Redoc — это инструмент с открытым исходным кодом для создания документации на основе определений OpenAPI (ранее Swagger).
 
-By default Redoc offers a three-panel, responsive layout:
+По умолчанию Redoc предлагает трехпанельную адаптивную компоновку:
 
-- The left panel contains a search bar and navigation menu.
-- The central panel contains the documentation.
-- The right panel contains request and response examples.
+- Левая панель содержит строку поиска и меню навигации.
+- Центральная панель содержит документацию.
+- Правая панель содержит примеры запросов и ответов.
 
 ![Redoc demo](https://raw.githubusercontent.com/Redocly/redoc/main/demo/redoc-demo.png)
 
-## Live demo
+## Демонстрация в реальном времени
 
-If you want to see how Redoc renders your OpenAPI definition,
-you can try it out online at https://redocly.github.io/redoc/.
+Если вы хотите увидеть, как Redoc отображает ваше определение OpenAPI, вы можете попробовать это онлайн по адресу https://redocly.github.io/redoc/.
 
-A version of the Swagger Petstore API is displayed by default.
-To test it with your own OpenAPI definition,
-enter the URL for your definition and select **TRY IT**.
+Версия API Swagger Petstore отображается по умолчанию. Чтобы протестировать ее с вашим собственным определением OpenAPI, введите URL для вашего определения и выберите **TRY IT**.
 
-## Redoc features
+## Особенности перекодировки
 
-- Responsive three-panel design with menu/scrolling synchronization
-- Support for OpenAPI 3.1, OpenAPI 3.0, and Swagger 2.0
-- Ability to integrate your API introduction into the side menu
-- High-level grouping in side menu with the [`x-tagGroups`](https://redocly.com/docs/api-reference-docs/specification-extensions/x-tag-groups/) specification extension
-- [Simple integration with `create-react-app`](https://redocly.com/docs/redoc/quickstart/react/)
-- Code samples support (with vendor extension) <br>
+- Адаптивный трехпанельный дизайн с синхронизацией меню/прокрутки
+- Поддержка OpenAPI 3.1, OpenAPI 3.0 и Swagger 2.0
+- Возможность интегрировать введение API в боковое меню
+- Группировка высокого уровня в боковом меню с [`x-tagGroups`](https://redocly.com/docs/api-reference-docs/specification-extensions/x-tag-groups/) расширением спецификации
+- [Простая интеграция с `create-react-app`](https://redocly.com/docs/redoc/quickstart/react/)
+- Поддержка примеров кода (с расширением поставщика) <br>
   ![code samples in action](docs/images/code-samples-demo.gif)
 
-## Usage
+## Использование
 
-Redoc is provided as a CLI tool (also distributed as a Docker image), HTML tag, and React component.
+Redoc предоставляется как инструмент CLI (также распространяется как образ Docker), HTML-тег и компонент React.
 
-### Generate documentation from the CLI
+### Создание документации из CLI
 
-If you have Node installed, quickly generate documentation using `npx`:
+Если у вас установлен Node, вы можете быстро создать документацию, используя `npx`:
 
 ```bash
 npx @redocly/cli build-docs openapi.yaml
 ```
 
-The tool outputs by default to a file named `redoc-static.html` that you can open in your browser.
+TПо умолчанию инструмент выводит данные в файл с именем `redoc-static.html` который можно открыть в браузере.
 
-> [Redocly CLI](https://github.com/Redocly/redocly-cli/) does more than docs; check it out and add linting, bundling, and more to your API workflow.
+> [Redocly CLI](https://github.com/Redocly/redocly-cli/) делает больше, чем просто документацию; ознакомьтесь с ним и добавьте линтинг, объединение и многое другое в свой рабочий процесс API.
 
-### Add an HTML element to the page
+### Добавьте HTML-элемент на страницу
 
-Create an HTML page, or edit an existing one, and add the following within the body tags:
+Создайте HTML-страницу или отредактируйте существующую и добавьте в теги body следующее:
 
 ```html
     <redoc spec-url="http://petstore.swagger.io/v2/swagger.json"></redoc>
     <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
 ```
 
-Open the HTML file in your browser, and your API documentation is shown on the page.
+Откройте HTML-файл в браузере, и на странице отобразится документация по API.
 
-Add your own `spec-url` to the `<redoc>` tag; this attribute can also be a local file. The JavaScript library can also be installed locally using `npm` and served from your own server, see the [HTML deployment documentation](https://redocly.com/docs/redoc/deployment/html/) for more details.
+Добавьте свой собственный `spec-url` к the `<redoc>` тегу; этот атрибут также может быть локальным файлом. Библиотеку JavaScript также можно установить локально с помощью `npm` и обслуживать с вашего собственного сервера, см. [документацию по развёртыванию HTML](https://redocly.com/docs/redoc/deployment/html/) для получения более подробной информации.
 
-### More usage options
+### Дополнительные варианты использования
 
-Check out the [deployment documentation](./docs/deployment/intro.md) for more options, and detailed documentation for each.
+Дополнительные параметры и подробную информацию по каждому варианту можно найти в [документации по развёртыванию](./docs/deployment/intro.md).
 
-## Redoc vs. Redocly API Reference
 
-Redoc is Redocly's community-edition product. Looking for something more?
-We also offer [hosted API reference documentation](https://redocly.com/docs/api-registry/guides/api-registry-quickstart/)
-with additional features including:
+### Документация и ресурсы
 
-* Try-it console
-* Automated code samples
-* Pagination
-* Extra theme options
+- [Справочные документы](https://redocly.com/docs/api-reference-docs/getting-started/) 
+- [Redoc](https://redocly.com/docs/redoc/) - подробная документация по этому проекту с открытым исходным кодом (также в папке `docs/`)
+- [Интерфейс командной строки для объединения ваших документов в HTML-файл, готовый к публикации в Интернете](https://redocly.com/docs/cli/commands/build-docs/)
+- Анализ API, объединение и многое другое с открытым исходным кодом  [Redocly CLI](https://redocly.com/docs/cli)
 
-### Documentation and resources
+## Кейсы
 
-- [Reference docs](https://redocly.com/docs/api-reference-docs/getting-started/) - we take care of the hosting
-- [Redoc](https://redocly.com/docs/redoc/) - detailed documentation for this open source project (also in the `docs/` folder)
-- [Command-line interface to bundle your docs into a web-ready HTML file](https://redocly.com/docs/cli/commands/build-docs/)
-- API linting, bundling, and much more with open source [Redocly CLI](https://redocly.com/docs/cli)
-
-## Showcase
-
-A sample of the organizations using Redocly tools in the wild:
+Примеры организаций, использующих инструменты Redocly на практике:
 
 - [Rebilly](https://api-reference.rebilly.com/)
 - [Docker Engine](https://docs.docker.com/engine/api/v1.25/)
@@ -104,43 +91,28 @@ A sample of the organizations using Redocly tools in the wild:
 - [BoxKnight](https://www.docs.boxknight.com/)
 - [Quaderno API](https://developers.quaderno.io/api)
 
-_Pull requests to add your own API page to the list are welcome_
+## Конфигурация
 
-## Configuration
+Redoc обладает широкими возможностями настройки, подробности см. в [документация по настройке](docs/config.md).
 
-Redoc is highly configurable, see the [configuration documentation](docs/config.md) for details.
+### Расширения спецификации OpenAPI
+Redoc использует следующие [расширения спецификации](https://redocly.com/docs/api-reference-docs/spec-extensions/):
 
-### OpenAPI specification extensions
-Redoc uses the following [specification extensions](https://redocly.com/docs/api-reference-docs/spec-extensions/):
-
-* [`x-logo`](docs/redoc-vendor-extensions.md#x-logo) - is used to specify API logo
-* [`x-traitTag`](docs/redoc-vendor-extensions.md#x-traitTag) - useful for tags that refer to non-navigation properties like Pagination, Rate-Limits, etc
-* [`x-codeSamples`](docs/redoc-vendor-extensions.md#x-codeSamples) - specify operation code samples
-* [`x-badges`](docs/redoc-vendor-extensions.md#x-badges) - specify operation badges
-* [`x-examples`](docs/redoc-vendor-extensions.md#x-examples) - specify JSON example for requests
-* [`x-nullable`](docs/redoc-vendor-extensions.md#x-nullable) - mark schema param as a nullable
-* [`x-displayName`](docs/redoc-vendor-extensions.md#x-displayname) - specify human-friendly names for the menu categories
-* [`x-tagGroups`](docs/redoc-vendor-extensions.md#x-tagGroups) - group tags by categories in the side menu
-* [`x-servers`](docs/redoc-vendor-extensions.md#x-servers) - ability to specify different servers for API (backported from OpenAPI 3.0)
-* [`x-ignoredHeaderParameters`](docs/redoc-vendor-extensions.md#x-ignoredHeaderParameters) - ability to specify header parameter names to ignore
-* [`x-additionalPropertiesName`](docs/redoc-vendor-extensions.md#x-additionalPropertiesName) - ability to supply a descriptive name for the additional property keys
-* [`x-summary`](docs/redoc-vendor-extensions.md#x-summary) - for Response object, use as the response button text, with description rendered under the button
-* [`x-extendedDiscriminator`](docs/redoc-vendor-extensions.md#x-extendedDiscriminator) - in Schemas, uses this to solve name-clash issues with the standard discriminator
-* [`x-explicitMappingOnly`](docs/redoc-vendor-extensions.md#x-explicitMappingOnly) - in Schemas, display a more descriptive property name in objects with additionalProperties when viewing the property list with an object
-
-## Releases
-
-**The README for the `1.x` version is on the [v1.x](https://github.com/Redocly/redoc/tree/v1.x) branch.**
-
-All the 2.x releases are deployed to npm and can be used with Redocly-cdn:
-- particular release, for example, `v2.0.0`: https://cdn.redoc.ly/redoc/v2.0.0/bundles/redoc.standalone.js
-- `latest` release: https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js
-
-Additionally, all the 1.x releases are hosted on our GitHub Pages-based CDN **(deprecated)**:
-- particular release, for example `v1.2.0`: https://rebilly.github.io/ReDoc/releases/v1.2.0/redoc.min.js
-- `v1.x.x` release: https://rebilly.github.io/ReDoc/releases/v1.x.x/redoc.min.js
-- `latest` release: https://rebilly.github.io/ReDoc/releases/latest/redoc.min.js - points to latest 1.x.x release since 2.x releases are not hosted on this CDN but on unpkg.
+* [`x-logo`](docs/redoc-vendor-extensions.md#x-logo) - используется для указания логотипа API
+* [`x-traitTag`](docs/redoc-vendor-extensions.md#x-traitTag) -  полезно для тегов, которые ссылаются на ненавигационные свойства, такие как пагинация, ограничения скорости и т.д.
+* [`x-codeSamples`](docs/redoc-vendor-extensions.md#x-codeSamples) - указать примеры кодов операций
+* [`x-badges`](docs/redoc-vendor-extensions.md#x-badges) - указать значки операций
+* [`x-examples`](docs/redoc-vendor-extensions.md#x-examples) - указать пример JSON для запросов
+* [`x-nullable`](docs/redoc-vendor-extensions.md#x-nullable) - пометить параметр схемы как допускающий значение NULL
+* [`x-displayName`](docs/redoc-vendor-extensions.md#x-displayname) - указать понятные человеку названия для категорий меню
+* [`x-tagGroups`](docs/redoc-vendor-extensions.md#x-tagGroups) - группировать теги по категориям в боковом меню
+* [`x-servers`](docs/redoc-vendor-extensions.md#x-servers) - возможность указывать разные серверы для API (портировано из OpenAPI 3.0)
+* [`x-ignoredHeaderParameters`](docs/redoc-vendor-extensions.md#x-ignoredHeaderParameters) - возможность указывать имена параметров заголовка, которые следует игнорировать
+* [`x-additionalPropertiesName`](docs/redoc-vendor-extensions.md#x-additionalPropertiesName) - возможность указать описательное имя для дополнительных ключей свойств
+* [`x-summary`](docs/redoc-vendor-extensions.md#x-summary) - для объекта Response используйте в качестве текста кнопки ответа описание, отображаемое под кнопкой
+* [`x-extendedDiscriminator`](docs/redoc-vendor-extensions.md#x-extendedDiscriminator) - в схемах использует это для решения проблем конфликта имен со стандартным дискриминатором
+* [`x-explicitMappingOnly`](docs/redoc-vendor-extensions.md#x-explicitMappingOnly) - в схемах отображать более описательное имя свойства в объектах с additionalProperties при просмотре списка свойств с объектом
 
 
 ## Development
-see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
+см. [CONTRIBUTING.md](.github/CONTRIBUTING.md)
